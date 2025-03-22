@@ -219,12 +219,12 @@ export default defineComponent({
     "ZAR" : "ZA",
     "ZMK" : "ZM",
     "ZWD" : "ZW"
-       },
+       } as { [key: string]: string },
       amount: 1,
       fromCurrency: "XAF",
       toCurrency: "USD",
       exchangeRateTxt: "Conversion en cours...",
-      lastConvertedAmount: null, // Pour stocker le dernier montant converti
+      lastConvertedAmount: null as string | null, 
       history: JSON.parse(localStorage.getItem("conversionHistory") || "[]"),
       userClicked: false
     };
@@ -238,6 +238,9 @@ export default defineComponent({
     }
   },
   methods: {
+    loadFlag(type: string) {
+    console.log(`Load flag for ${type}`);
+  },
     swapCurrencies() {
       [this.fromCurrency, this.toCurrency] = [this.toCurrency, this.fromCurrency];
       this.getExchangeRate();
@@ -258,7 +261,8 @@ export default defineComponent({
             const total = (this.amount * rate).toFixed(2);
             const conversionText = `${this.amount} ${this.fromCurrency} = ${total} ${this.toCurrency}`;
             this.exchangeRateTxt = conversionText;
-            this.lastConvertedAmount = total; // Stocker la conversion pour inversion
+            // Stocker la conversion pour inversion
+            this.lastConvertedAmount = total; 
 
             if (this.userClicked) {
               this.history.unshift(conversionText);
@@ -282,7 +286,8 @@ export default defineComponent({
     },
     reverseConversion() {
       if (this.lastConvertedAmount) {
-        this.amount = parseFloat(this.lastConvertedAmount); // Définir l'ancien montant converti
+        // Définir l'ancien montant converti
+        this.amount = parseFloat(this.lastConvertedAmount); 
         this.swapCurrencies();
       }
     }
