@@ -46,8 +46,7 @@
       </section>
     </div>
 
-    <div class="img">
-      <span></span>
+    <div class="img-who-wrappe">
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
 
 
-*{
+*, html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,9 +11,10 @@
   font-weight: 600;
 }
 body{
-  display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   min-height: 100vh;
-  padding: 0px;
   background: #ea400c;
 }
 
@@ -35,7 +36,7 @@ body{
   box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
 }
 
-.img{
+.img-who-wrappe{
   width: 70%;
   display: flex;
   align-items: center;
@@ -152,7 +153,7 @@ form button:hover{
   width: 27%;
   height: 30vh;
   position: fixed;
-  overflow-y: hidden; 
+  overflow-y: auto; 
   padding-top: 2px;
   margin-top: 10px;
   padding: 10px;
@@ -201,13 +202,19 @@ form button:hover{
 
 /* Pour les écrans plus petits que 1000px */
 @media (max-width: 1000px) {
+  body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   .wrapper {
     width: 100% !important;
     z-index: 7799999999999;
   }
 
-  .img {
+  .img-who-wrappe {
     display: none !important;
+    visibility: hidden;
   }
 
   .section-historique {
@@ -225,8 +232,9 @@ form button:hover{
     display: flex;
   }
 
-  .img {
+  .img-who-wrappe {
     display: none !important;
+    visibility: hidden;
   }
 
   .section-historique {
@@ -241,28 +249,30 @@ form button:hover{
     padding: 25px 23px 2px;
   }
 
-  .img {
+  .img-who-wrappe {
     display: none !important;
+    visibility: hidden;
   }
   .section-historique {
     width: 92%;
   }
 }
 
-
-
-/* Pour les écrans plus petits que 1000px */
-@media (min-width: 400px) {
+/* Pour les écrans très petits (smartphones en portrait) */
+@media (max-width: 100px) {
   .wrapper {
     width: 100% !important;
-    z-index: 7799999999999;
+    padding: 20px 17px 2px;
   }
 
-  .img {
+  .img-who-wrappe {
     display: none !important;
+    visibility: hidden;
   }
-
   .section-historique {
     width: 92%;
   }
 }
+
+
+ 
