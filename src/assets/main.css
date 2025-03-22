@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gidole', sans-serif;
+  font-weight: 600;
+}
+/* body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: #ea400c;
+  background-image: url('./img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
+} */
+.bloc{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+::selection{
+  color: #fff;
+  background: #ea400c;
+}
+.wrapper{
+  width: 30%;
+  min-height: 100vh;
+  padding: 30px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+
+.img{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: #ea400c;
+  background-image: url('./img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(88px);
+}
+
+.wrapper header{
+  font-size: 35px;
+  font-weight: 600;
+  color: #ea400c;
+  font-weight: 900;
+  text-align: center;
+}
+.wrapper form{
+  margin: 40px 0 20px 0;
+}
+form :where(input, select, button){
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+form p{
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+form input{
+  height: 50px;
+  font-size: 17px;
+  padding: 0 15px;
+  border: 1px solid #e5e4e3;
+  margin-top: 10px;
+}
+form input:hover{
+  padding: 0 14px;
+  border: 2px solid #ea400c;
+}
+form .drop-list{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.drop-list .select-box{
+  display: flex;
+  width: 115px;
+  height: 45px;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  border: 1px solid #e5e4e3;
+  margin-top: 10px
+}
+.drop-list .select-box:hover{
+  border: 2px solid #ea400c;
+}
+.select-box img{
+  max-width: 21px;
+}
+.select-box select{
+  width: auto;
+  font-size: 16px;
+  background: none;
+  margin: 0 -2px 0 5px;
+}
+.select-box select::-webkit-scrollbar{
+  width: 10px;
+}
+.select-box select::-webkit-scrollbar-track{
+  background: #fff;
+}
+.select-box select::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+.drop-list .icon{
+  padding: 8px 10px;
+  background-color: #f1f0ef;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.33s ease-in-out;
+}
+.drop-list .icon:hover{
+  background-color: #e5e4e3;
+}
+form .exchange-rate{
+  font-size: 17px;
+  margin: 20px 0 20px;
+}
+form button{
+  height: 52px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  background: #ea400c;
+  transition: 0.3s ease;
+}
+
+
+form button:hover{
+  background:rgb(213, 56, 8);
+}
+
+.section-historique {
+  width: 27%;
+  height: 30vh;
+  position: fixed;
+  overflow-y: hidden; 
+  padding-top: 2px;
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  transition: overflow 0.3s ease-in-out;
+}
+
+.section-historique:hover {
+  overflow-y: auto;
+}
+
+.section-historique::-webkit-scrollbar {
+  width: 7px;
+}
+
+.section-historique::-webkit-scrollbar-thumb {
+  background-color:rgb(209, 208, 208); 
+  border-radius: 4px;
+}
+
+.section-historique::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.section-historique h2 {
+  margin-bottom: 6px;
+}
+
+.historique-texte {
+  list-style: none;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.clear-history {
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 15px !important;
+  background: red;
+  border-radius: 2.6px;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .img {
+    width: 0%;
+    display: none;
+  }
+
+  .section-historique {
+    width: 92%;
+  }
+}
