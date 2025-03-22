@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ... */
 
 @import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
@@ -20,6 +16,7 @@ body{
   padding: 0px;
   background: #ea400c;
 }
+
 .bloc{
   display: flex;
   align-items: center;
@@ -252,3 +249,20 @@ form button:hover{
   }
 }
 
+
+
+/* Pour les écrans plus petits que 1000px */
+@media (min-width: 400px) {
+  .wrapper {
+    width: 100% !important;
+    z-index: 7799999999999;
+  }
+
+  .img {
+    display: none !important;
+  }
+
+  .section-historique {
+    width: 92%;
+  }
+}

@@ -291,7 +291,7 @@ export default defineComponent({
         this.swapCurrencies();
       }
     }
-  },
+  },  
   mounted() {
     this.getExchangeRate();
   }
